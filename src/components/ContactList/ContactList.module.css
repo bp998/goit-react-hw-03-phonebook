@@ -1,0 +1,9 @@
+.list {
+  padding-left: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.element {
+  list-style-type: none;
+}
