@@ -11,6 +11,16 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
+    console.log(parsedContacts);
+    this.setState({ contacts: parsedContacts });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+
   handleSubmit = (name, number) => {
     const { contacts } = this.state;
     if (
